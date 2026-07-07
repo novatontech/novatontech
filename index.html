@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaTon Tech | AI & Google Apps Script Solutions</title>
+    
+    <!-- গুগল সার্চে পাওয়ার জন্য জরুরি এসইও মেটা ট্যাগ -->
+    <meta name="description" content="Official portfolio of NovaTon Tech. We specialize in AI automation, Google Apps Script development, and smart business web applications.">
+    <meta name="keywords" content="NovaTon Tech, nova ton tech, NovaTon, Google Apps Script Automation, AI Software Company Bangladesh, Excel Solutions, Chilmari, Kurigram">
+    <meta name="author" content="Tonmoy Chandro Barmon">
+
+    <!-- আইকনগুলো দেখানোর জন্য প্রয়োজনীয় Font Awesome CDN Link -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
         
-        /* লোগোর জন্য বিশেষ রেসপনসিভ হেডার সেকশন */
+        /* লোগোর জন্য হেডার সেকশন */
         header { 
             background: #1e293b; 
             padding: 15px 40px; 
@@ -20,13 +29,13 @@
         .logo-container {
             display: flex;
             align-items: center;
-            background: #ffffff; /* লোগোর নিজস্ব সাদা ব্যাকগ্রাউন্ডের সাথে মেলানোর জন্য */
+            background: #ffffff; 
             padding: 5px 15px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
         .brand-logo { 
-            height: 50px; /* ডেস্কটপে লোগোর সাইজ */
+            height: 50px; 
             width: auto;
             object-fit: contain;
             display: block;
@@ -72,33 +81,11 @@
         .team-card p { color: #3b82f6; font-weight: bold; font-size: 1rem; text-align: center; }
         .team-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 5px; }
         
-        /* কন্টাক্ট সেকশন */
+        /* কন্টাক্ট সেকশন ও সোশ্যাল আইকন স্টাইল */
         .contact-info { background: #1e293b; padding: 35px; border-radius: 12px; border: 1px solid #334155; }
         .contact-info p { margin-bottom: 12px; font-size: 1.1rem; color: #cbd5e1; }
         .contact-info strong { color: #3b82f6; }
         
-        footer { text-align: center; padding: 25px; color: #64748b; font-size: 0.9rem; border-top: 1px solid #334155; margin-top: 60px; }
-
-        /* মোবাইল রেসপনসিভ সিএসএস */
-        @media (max-width: 768px) {
-            header { 
-                flex-direction: column; 
-                padding: 20px;
-                text-align: center;
-            }
-            .logo-container { 
-                margin-bottom: 15px;
-                padding: 4px 12px;
-            }
-            .brand-logo { 
-                height: 40px; 
-            }
-            nav a { margin: 0 10px; font-size: 0.9rem; }
-            .hero h2 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
-            .section-title { font-size: 1.5rem; }
-            .slider img { max-height: 280px; } 
-        }
         .social-icons {
             margin-top: 25px;
             display: flex;
@@ -121,11 +108,32 @@
             transform: translateY(-5px);
             filter: brightness(1.2);
         }
-        /* আইকনগুলোর অফিশিয়াল ব্র্যান্ড কালার */
         .facebook { background: #1877f2; }
         .linkedin { background: #0077b5; }
         .github { background: #24292e; border: 1px solid #444; }
         .whatsapp { background: #25d366; }
+        
+        footer { text-align: center; padding: 25px; color: #64748b; font-size: 0.9rem; border-top: 1px solid #334155; margin-top: 60px; }
+
+        /* মোবাইল রেসপনসিভ সিএসএস */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                padding: 20px;
+                text-align: center;
+            }
+            .logo-container { 
+                margin-bottom: 15px;
+                padding: 4px 12px;
+            }
+            .brand-logo { height: 40px; }
+            nav a { margin: 0 10px; font-size: 0.9rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.5rem; }
+            .slider img { max-height: 280px; } 
+            .social-icons { justify-content: center; } 
+        }
     </style>
 </head>
 <body>
@@ -133,7 +141,6 @@
     <!-- হেডার -->
     <header>
         <div class="logo-container">
-            <!-- আপনার আপলোড করা নতুন লোগোটি এখানে কাজ করবে -->
             <img src="logo.png" alt="NovaTon Tech Logo" class="brand-logo">
         </div>
         <nav>
@@ -157,7 +164,7 @@
             <div class="card">
                 <h3>Tonmoy Tech Bank App</h3>
                 <p>Automated business reporting dashboard that pulls data from multiple APIs into Google Sheets.</p>
-                <a href="https://script.google.com/macros/s/AKfycbz1iom2RH-IK4r5hhXJHsQUklRaurLRtHS1ryoiQfRp/dev" class="btn" target="_blank">Launch App</a>
+                <a href="https://google.com" class="btn" target="_blank">Launch App</a>
             </div>
             <div class="card">
                 <h3>Smart Sheets Dashboard</h3>
@@ -165,12 +172,10 @@
                 <a href="https://google.com" class="btn" target="_blank">Launch App</a>
             </div>
         </div>
-
         <!-- Clients & Deals Slider Section -->
         <div class="section-title" id="clients">Our Client Success Stories</div>
         <div class="slider-container">
             <div class="slider" id="imageSlider">
-                <!-- গিটহাবে আপনার ফাইল ফরম্যাট .png অনুযায়ী এগুলো সেট করা হয়েছে -->
                 <img src="client1.png" alt="Client Deal 1">
                 <img src="client2.png" alt="Client Deal 2">
             </div>
@@ -196,20 +201,18 @@
             </div>
         </div>
 
-               <!-- Contact Section -->
+        <!-- Contact Section -->
         <div class="section-title" id="contact">Contact Us</div>
         <div class="contact-info">
             <p><strong>Address:</strong> 5620-Ranigonj, Chilmari, Kurigram, Bangladesh</p>
-            <p><strong>Email:</strong> novatontech@gmail.com</p>
+            <p><strong>Email:</strong> info.tonmoytech@gmail.com</p>
             <p><strong>Phone:</strong> 01903726564</p>
             
             <!-- সোশ্যাল মিডিয়া আইকন সেকশন -->
             <div class="social-icons">
-                <!-- লিংকের href="#" কেটে আপনার আসল প্রোফাইল লিংক বসিয়ে দেবেন -->
                 <a href="#" class="social-icon facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="social-icon linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="social-icon github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <!-- হোয়াটসঅ্যাপে সরাসরি মেসেজ যাওয়ার জন্য নিচের নাম্বারে আপনার অ্যাকাউন্ট থাকতে হবে -->
                 <a href="https://wa.me" class="social-icon whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
@@ -218,9 +221,6 @@
     <footer>
         <p>&copy; 2026 NovaTon Tech. All rights reserved.</p>
     </footer>
-
-    <!-- আইকনগুলো কাজ করার জন্য প্রয়োজনীয় Font Awesome Script (এটি অবশ্যই লাগবে) -->
-    <link rel="stylesheet" href="https://cloudflare.com">
 
     <script>
         const slider = document.getElementById('imageSlider');
