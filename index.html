@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTon Tech | AI & Google Apps Script Solutions</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        
+        /* লোগোর জন্য বিশেষ রেসপনসিভ হেডার সেকশন */
+        header { 
+            background: #1e293b; 
+            padding: 15px 40px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 2px solid #3b82f6; 
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            background: #ffffff; /* লোগোর নিজস্ব সাদা ব্যাকগ্রাউন্ডের সাথে মেলানোর জন্য */
+            padding: 5px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .brand-logo { 
+            height: 50px; /* ডেস্কটপে লোগোর সাইজ */
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #3b82f6; }
+
+        /* মূল কন্টেইনার */
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* হিরো সেকশন */
+        .hero { text-align: center; padding: 50px 20px; background: radial-gradient(circle, #1e293b 0%, #0f172a 100%); border-radius: 12px; margin-bottom: 40px; border: 1px solid #1e293b; }
+        .hero h2 { font-size: 2.2rem; margin-bottom: 15px; color: #f1f5f9; }
+        .hero p { color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto; }
+        
+        .section-title { font-size: 1.8rem; color: #3b82f6; margin-bottom: 25px; border-left: 4px solid #3b82f6; padding-left: 12px; margin-top: 50px; }
+        
+        /* গ্রিড সিস্টেম */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; border: 1px solid #334155; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-5px); border-color: #3b82f6; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1); }
+        .card h3 { color: #f1f5f9; margin-bottom: 12px; font-size: 1.3rem; }
+        .card p { color: #94a3b8; font-size: 0.98rem; margin-bottom: 20px; }
+        
+        /* লিংক বোতাম */
+        .btn { display: inline-block; background: #3b82f6; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.95rem; text-align: center; width: 100%; margin-top: auto; transition: background 0.3s; }
+        .btn:hover { background: #2563eb; }
+        
+        /* স্লাইডার সেকশন */
+        .slider-container { width: 100%; max-width: 850px; margin: 0 auto; overflow: hidden; border-radius: 12px; border: 2px solid #334155; box-shadow: 0 15px 30px rgba(0,0,0,0.5); }
+        .slider { display: flex; transition: transform 0.6s ease-in-out; }
+        .slider img { width: 100%; object-fit: cover; max-height: 480px; display: block; }
+        
+        /* টিম সেকশন */
+        .team-card { text-align: center; align-items: center; }
+        .team-card h3 { margin-top: 15px; color: #f1f5f9; text-align: center; }
+        .team-card p { color: #3b82f6; font-weight: bold; font-size: 1rem; text-align: center; }
+        .team-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #3b82f6; margin-bottom: 5px; }
+        
+        /* কন্টাক্ট সেকশন */
+        .contact-info { background: #1e293b; padding: 35px; border-radius: 12px; border: 1px solid #334155; }
+        .contact-info p { margin-bottom: 12px; font-size: 1.1rem; color: #cbd5e1; }
+        .contact-info strong { color: #3b82f6; }
+        
+        footer { text-align: center; padding: 25px; color: #64748b; font-size: 0.9rem; border-top: 1px solid #334155; margin-top: 60px; }
+
+        /* মোবাইল রেসপনসিভ সিএসএস */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                padding: 20px;
+                text-align: center;
+            }
+            .logo-container { 
+                margin-bottom: 15px;
+                padding: 4px 12px;
+            }
+            .brand-logo { 
+                height: 40px; 
+            }
+            nav a { margin: 0 10px; font-size: 0.9rem; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 1.5rem; }
+            .slider img { max-height: 280px; } 
+        }
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: transform 0.3s, filter 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.2);
+        }
+        /* আইকনগুলোর অফিশিয়াল ব্র্যান্ড কালার */
+        .facebook { background: #1877f2; }
+        .linkedin { background: #0077b5; }
+        .github { background: #24292e; border: 1px solid #444; }
+        .whatsapp { background: #25d366; }
+    </style>
+</head>
+<body>
+
+    <!-- হেডার -->
+    <header>
+        <div class="logo-container">
+            <!-- আপনার আপলোড করা নতুন লোগোটি এখানে কাজ করবে -->
+            <img src="logo.png" alt="NovaTon Tech Logo" class="brand-logo">
+        </div>
+        <nav>
+            <a href="#projects">Projects</a>
+            <a href="#clients">Clients</a>
+            <a href="#team">Our Team</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>We Automate Your Business Using AI</h2>
+            <p>We build powerful web applications, custom workflows, and intelligent AI tools built entirely on Google Apps Script.</p>
+        </div>
+
+        <!-- Featured Projects Section -->
+        <div class="section-title" id="projects">Featured Projects (Web Apps)</div>
+        <div class="grid">
+            <div class="card">
+                <h3>Tonmoy Tech Bank App</h3>
+                <p>Automated business reporting dashboard that pulls data from multiple APIs into Google Sheets.</p>
+                <a href="https://script.google.com/macros/s/AKfycbz1iom2RH-IK4r5hhXJHsQUklRaurLRtHS1ryoiQfRp/dev" class="btn" target="_blank">Launch App</a>
+            </div>
+            <div class="card">
+                <h3>Smart Sheets Dashboard</h3>
+                <p>An Apps Script tool that reads incoming support emails and drafts intelligent responses using AI.</p>
+                <a href="https://google.com" class="btn" target="_blank">Launch App</a>
+            </div>
+        </div>
+
+        <!-- Clients & Deals Slider Section -->
+        <div class="section-title" id="clients">Our Client Success Stories</div>
+        <div class="slider-container">
+            <div class="slider" id="imageSlider">
+                <!-- গিটহাবে আপনার ফাইল ফরম্যাট .png অনুযায়ী এগুলো সেট করা হয়েছে -->
+                <img src="client1.png" alt="Client Deal 1">
+                <img src="client2.png" alt="Client Deal 2">
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section-title" id="team">Our Leadership Team</div>
+        <div class="grid">
+            <div class="card team-card">
+                <img src="chairman.jpg" alt="Chairman" class="team-img">
+                <h3>Tonmoy Chandro Barmon</h3>
+                <p>Chairman, NovaTon Tech</p>
+            </div>
+            <div class="card team-card">
+                <img src="sourov.jpg" alt="MD" class="team-img">
+                <h3>Sourov Roy</h3>
+                <p>M.D, NovaTon Tech</p>
+            </div>
+            <div class="card team-card">
+                <img src="repon.jpg" alt="Sales Manager" class="team-img">
+                <h3>Repon Roy</h3>
+                <p>Sales Manager, NovaTon Tech</p>
+            </div>
+        </div>
+
+               <!-- Contact Section -->
+        <div class="section-title" id="contact">Contact Us</div>
+        <div class="contact-info">
+            <p><strong>Address:</strong> 5620-Ranigonj, Chilmari, Kurigram, Bangladesh</p>
+            <p><strong>Email:</strong> novatontech@gmail.com</p>
+            <p><strong>Phone:</strong> 01903726564</p>
+            
+            <!-- সোশ্যাল মিডিয়া আইকন সেকশন -->
+            <div class="social-icons">
+                <!-- লিংকের href="#" কেটে আপনার আসল প্রোফাইল লিংক বসিয়ে দেবেন -->
+                <a href="#" class="social-icon facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon github" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <!-- হোয়াটসঅ্যাপে সরাসরি মেসেজ যাওয়ার জন্য নিচের নাম্বারে আপনার অ্যাকাউন্ট থাকতে হবে -->
+                <a href="https://wa.me" class="social-icon whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 NovaTon Tech. All rights reserved.</p>
+    </footer>
+
+    <!-- আইকনগুলো কাজ করার জন্য প্রয়োজনীয় Font Awesome Script (এটি অবশ্যই লাগবে) -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+
+    <script>
+        const slider = document.getElementById('imageSlider');
+        const images = slider.getElementsByTagName('img');
+        let index = 0;
+
+        function changeImage() {
+            index++;
+            if (index >= images.length) {
+                index = 0;
+            }
+            slider.style.transform = `translateX(${-index * 100}%)`;
+        }
+        if (images.length > 1) {
+            setInterval(changeImage, 3000);
+        }
+    </script>
+
+</body>
+</html>
